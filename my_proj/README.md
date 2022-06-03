@@ -13,6 +13,9 @@
 
 ### Data
 - Positive samples: CLIP-seq에서 얻은 LIN28A-bound sequences
+  - CLIP-35L33G.bam file
+  - 논문에서와 같이 Shannon entropy > 0.8, read counts > 50인 position을 filtering한 이후,
+  - 해당 position의 flanking sequence (20nt)를 얻을 예정
 - Negative samples: ???
 
 - One-hot encoding 예정
