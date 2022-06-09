@@ -7,7 +7,7 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import StandardScaler
-from sklearn.svm import SVC
+from sklearn.neighbors import KNeighborsClassifier
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import roc_auc_score
@@ -89,6 +89,7 @@ if __name__ == "__main__":
     with open("results.csv", "w") as f:
         f.write(f"Model,acc_mean,acc_std,auroc_mean,auroc_std\n")
     train_data, val_data, test_data = get_kmer_dataset(4)
-    train_Nseeds(LogisticRegression, train_data, test_data, N=20)
-    train_Nseeds(SVC, train_data, test_data, N=20)
+    train_Nseeds(KNeighborsClassifier, train_data, test_data, N=1)
+    train_Nseeds(LogisticRegression, train_data, test_data, N=1)
     train_Nseeds(RandomForestClassifier, train_data, test_data, N=20)
+    
