@@ -41,9 +41,9 @@ def get_kmer_dataset(k=4):
 
         return kmer_vectors
     
-    train_df = pd.read_csv("data/train.csv")
+    train_df = pd.read_csv("data/train_v2.csv")
     train_df, val_df = train_test_split(train_df, test_size=0.1, random_state=42)
-    test_df = pd.read_csv("data/test.csv")
+    test_df = pd.read_csv("data/test_v2.csv")
     
     train_X = df_to_kmer(train_df, k=k)
     val_X = df_to_kmer(val_df, k=k)
